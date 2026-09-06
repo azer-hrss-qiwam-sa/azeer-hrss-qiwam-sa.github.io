@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language Switcher Site</title>
+  <style>
+    /* প্রয়োজন অনুযায়ী আপনার সিএসএস স্টাইল এখানে রাখতে পারেন */
+    .btn-lang {
+      padding: 8px 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ভাষা পরিবর্তনের বাটন -->
+  <button type="button" class="btn-lang" onclick="toggleLanguage()" id="lang-btn">English</button>
+
+  <!-- আরবি কন্টেন্ট (যা শুরুতে দেখাবে) -->
+  <div id="arabic-content" dir="rtl">
+    <h1>مرحبا بك</h1>
+    <p>هنا محتوى اللغة العربية...</p>
+  </div>
+
+  <!-- ইংরেজি কন্টেন্ট (যা শুরুতে লুকানো থাকবে) -->
+  <div id="english-content" dir="ltr" style="display: none;">
+    <h1>Welcome</h1>
+    <p>Here is the English content...</p>
+  </div>
+
+  <!-- ভাষা চেঞ্জ করার জাভাস্ক্রিপ্ট -->
+  <script>
+    function toggleLanguage() {
+      var ar = document.getElementById('arabic-content');
+      var en = document.getElementById('english-content');
+      var btn = document.getElementById('lang-btn');
+
+      if (ar.style.display === "none") {
+        ar.style.display = "block";
+        en.style.display = "none";
+        btn.innerText = "English";
+      } else {
+        ar.style.display = "none";
+        en.style.display = "block";
+        btn.innerText = "عربي";
+      }
+    }
+  </script>
+
+</body>
+</html>
